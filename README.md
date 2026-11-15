@@ -1,36 +1,38 @@
 # Proyek Analisis Data: Bike Sharing Dataset
 
 ## Deskripsi Proyek
-Proyek ini merupakan submission akhir untuk kelas **Belajar Fundamental Analisis Data** di Dicoding.
-Proyek menganalisis data penyewaan sepeda (Bike Sharing Dataset) dari tahun 2011–2012 di Washington D.C., USA.
 
-Dataset yang digunakan: **Bike Sharing Dataset** (Hadi Fanaee-T, University of Porto)
+Proyek ini merupakan submission akhir untuk kelas Belajar Fundamental Analisis Data di Dicoding. Proyek ini menganalisis data penyewaan sepeda (Bike Sharing Dataset) dari tahun 2011-2012 di Washington D.C., USA.
+
+Dataset yang digunakan: Bike Sharing Dataset (Hadi Fanaee-T, University of Porto)
 
 ## Struktur Direktori
+
 ```
 submission/
-├───dashboard/
-│   ├───dashboard.py       # Aplikasi dashboard Streamlit (berada di root)
-│   ├───day_data.csv       # Data bersih harian (731 baris, 27 kolom)
-│   └───hour_data.csv      # Data bersih per jam (17.379 baris, 28 kolom)
-├───datasets/
-│   ├───day.csv            # Data agregat harian asli (731 baris)
-│   ├───hour.csv           # Data per jam asli (17.379 baris)
-│   └───Readme.txt         # Dokumentasi dataset asli
-├───notebook.ipynb         # Notebook analisis data lengkap
-├───README.md              # Berkas ini
-├───requirements.txt       # Daftar dependensi Python
-├───url.txt                # Tautan dashboard Streamlit Cloud
-├───plot_clustering.png    # Visualisasi hasil clustering
-├───plot_heatmap_season_tier.png   # Visualisasi heatmap season & tier
-├───plot_temporal_analysis.png     # Visualisasi analisis temporal
-├───plot_user_behavior.png         # Visualisasi perilaku pengguna
-└───plot_weather_impact.png        # Visualisasi pengaruh cuaca
+├── dashboard/
+│   ├── dashboard.py           # Aplikasi dashboard Streamlit
+│   ├── day_data.csv           # Data bersih harian (731 baris, 27 kolom)
+│   └── hour_data.csv          # Data bersih per jam (17.379 baris, 28 kolom)
+├── datasets/
+│   ├── day.csv                # Data agregat harian asli (731 baris)
+│   ├── hour.csv               # Data per jam asli (17.379 baris)
+│   └── Readme.txt             # Dokumentasi dataset asli
+├── notebook.ipynb             # Notebook analisis data lengkap
+├── README.md                  # Dokumentasi proyek lengkap
+├── requirements.txt           # Daftar dependensi Python
+├── url.txt                    # Tautan dashboard Streamlit Community Cloud
+├── plot_clustering.png        # Visualisasi hasil clustering
+├── plot_heatmap_season_tier.png   # Visualisasi heatmap season & tier
+├── plot_temporal_analysis.png     # Visualisasi analisis temporal
+├── plot_user_behavior.png         # Visualisasi perilaku pengguna
+└── plot_weather_impact.png        # Visualisasi pengaruh cuaca
 ```
 
 ## Setup Environment
 
 ### Setup Environment - Anaconda
+
 ```bash
 conda create --name main-ds python=3.9
 conda activate main-ds
@@ -38,6 +40,7 @@ pip install -r requirements.txt
 ```
 
 ### Setup Environment - Shell/Terminal
+
 ```bash
 mkdir proyek_analisis_data
 cd proyek_analisis_data
@@ -46,8 +49,10 @@ pipenv shell
 pip install -r requirements.txt
 ```
 
-## Run Streamlit App
+### Run Streamlit App
+
 ```bash
+cd dashboard
 streamlit run dashboard.py
 ```
 
@@ -55,214 +60,137 @@ streamlit run dashboard.py
 
 Ikuti langkah berikut untuk mendeploy dashboard ke Streamlit Community Cloud:
 
-1. **Push kode ke GitHub** 
- Pastikan seluruh file proyek (termasuk `dashboard/dashboard.py`, `dashboard/day_data.csv`, `dashboard/hour_data.csv`, `requirements.txt`, dan `url.txt`) telah di-push ke repository GitHub.
+### 1. Push kode ke GitHub
 
-2. **Buka Streamlit Community Cloud** 
- Kunjungi [https://share.streamlit.io](https://share.streamlit.io) dan login menggunakan akun GitHub Anda.
+Pastikan seluruh file proyek (termasuk folder dashboard/, requirements.txt, dan url.txt) telah di-push ke repository GitHub.
 
-3. **Buat Aplikasi Baru** 
- Klik tombol **"New app"**, lalu pilih:
- - **Repository**: repository proyek Anda
- - **Branch**: `main` (atau branch yang sesuai)
- - **Main file path**: `dashboard/dashboard.py`
+### 2. Buka Streamlit Community Cloud
 
-4. **Deploy** 
- Klik tombol **"Deploy"** dan tunggu hingga proses selesai. Streamlit akan secara otomatis menginstall dependensi dari `requirements.txt`.
+Kunjungi https://share.streamlit.io dan login menggunakan akun GitHub Anda.
 
-5. **Akses Dashboard** 
- Setelah deployment selesai, dashboard dapat diakses melalui URL yang diberikan Streamlit Cloud, misalnya: 
- `https://bike-sharing-rioandikaa01.streamlit.app/`
+### 3. Buat Aplikasi Baru
 
-> **Catatan:** Pastikan file `day_data.csv` dan `hour_data.csv` berada di dalam folder `dashboard/` agar dapat dibaca oleh `dashboard.py` saat berjalan di Streamlit Cloud.
+Klik tombol "New app", lalu atur konfigurasi:
+- Repository: repository proyek Anda
+- Branch: main (atau branch utama Anda)
+- Main file path: dashboard/dashboard.py
 
-## Cara Menjalankan
+### 4. Deploy
 
-### 1. Install Dependensi
-```bash
-pip install -r requirements.txt
-```
+Klik tombol "Deploy". Streamlit akan otomatis memasang dependensi dari requirements.txt.
 
-### 2. Jalankan Notebook Analisis
-Buka `notebook.ipynb` di Jupyter Notebook, JupyterLab, atau Google Colab, lalu jalankan semua cell dari atas hingga bawah.
+### 5. Akses Dashboard
 
-### 3. Jalankan Dashboard Streamlit
-Masuk ke folder `dashboard` dan jalankan:
-```bash
-cd dashboard
-streamlit run dashboard.py
-```
-Dashboard akan berakses di `http://localhost:8501`.
-
-## Berkas Markdown (README.md)
-Berkas README.md ini berisi panduan cara menjalankan dashboard dan analisis data. Langkah-langkahnya adalah:
-1. Siapkan environment sesuai pilihan (Anaconda atau Shell/Terminal).
-2. Install dependensi dengan `pip install -r requirements.txt`.
-3. Jalankan semua cell di `notebook.ipynb` untuk melakukan proses analisis data dari awal hingga akhir, termasuk penyimpanan data bersih ke folder `dashboard/`.
-4. Masuk ke folder `dashboard` dan jalankan `streamlit run dashboard.py` untuk membuka dashboard interaktif di browser.
-
----
-
+Setelah deployment selesai, dashboard dapat diakses publik melalui URL yang diberikan Streamlit Cloud, misalnya:
+https://bike-sharing-rioandikaa01.streamlit.app/
 ## Hasil Analisis Detail
 
 ### 1. Gathering Data
 
-Pada tahap ini, dua file dataset Bike Sharing dimuat ke dalam format DataFrame:
+Pada tahap ini, dua file dataset Bike Sharing dimuat ke dalam DataFrame Pandas:
 
-- **`day_df`** (dari `datasets/day.csv`): Berisi **731 baris** dan **16 kolom**, mencakup data agregat harian penyewaan sepeda selama 2 tahun penuh (1 Januari 2011 hingga 31 Desember 2012). Kolom utama yang relevan untuk analisis: `dteday`, `season`, `mnth`, `yr`, `weathersit`, `temp`, `atemp`, `hum`, `windspeed`, `casual`, `registered`, dan `cnt`.
-
-- **`hour_df`** (dari `datasets/hour.csv`): Berisi **17.379 baris** dan **17 kolom** — sama seperti `day_df` ditambah kolom `hr` (jam 0–23). Dataset ini memiliki granularitas per jam yang sekitar 24× lebih detail dari `day_df`, sehingga sangat cocok untuk analisis pola penyewaan intra-harian dan identifikasi jam puncak.
-
-Kedua dataset saling melengkapi: `day_df` digunakan untuk analisis musiman dan tahunan, sedangkan `hour_df` digunakan untuk analisis per jam dan perilaku pengguna berdasarkan waktu dalam sehari.
-
----
+- **day_df** (dari datasets/day.csv): Berisi 731 baris dan 16 kolom, mencakup data agregat harian penyewaan sepeda selama 2 tahun penuh (1 Januari 2011 hingga 31 Desember 2012).
+- **hour_df** (dari datasets/hour.csv): Berisi 17.379 baris dan 17 kolom (memiliki tambahan kolom hr jam 0-23). Granularitas per jam ini digunakan untuk identifikasi perilaku jam sibuk intra-harian.
 
 ### 2. Data Wrangling
 
 #### Assessing Data (Penilaian Kualitas Data)
 
-Pada tahap assessing, ditemukan **3 permasalahan utama** pada masing-masing dataset (`day_df` dan `hour_df`):
+Ditemukan permasalahan kualitas data yang langsung ditangani:
 
-| No | Permasalahan | Detail | Dampak Bisnis | Solusi |
-|----|-------------|--------|---------------|--------|
-| 1 | **Tipe data tidak sesuai** | Kolom `dteday` bertipe `object` (string), bukan `datetime64` | Tidak dapat dilakukan analisis time-series, grouping bulanan/musiman, atau perhitungan selisih tanggal | Konversi ke `datetime64` menggunakan `pd.to_datetime()` |
-| 2 | **Kolom kategorik tersimpan sebagai integer** | Kolom `season`, `mnth`, `weathersit`, `holiday`, `workingday`, `weekday`, `yr` tersimpan sebagai `int64`, bukan label yang bermakna | Sulit untuk dibaca dan divisualisasikan; stakeholder tidak dapat langsung memahami nilai angka (misal: season=1 apakah musim semi atau dingin?) | Lakukan pemetaan label (value mapping) menjadi teks yang bermakna |
-| 3 | **Nilai hum = 0** | Ditemukan nilai kelembapan = 0 yang tidak realistis secara fisik | Mengganggu analisis korelasi kelembapan terhadap penyewaan; bisa menghasilkan insight yang bias jika tidak ditangani | Verifikasi dan tandai sebagai anomali |
+- **Tipe data dteday bertipe object (string)**: Dikonversi menjadi datetime64 agar memungkinkan ekstraksi fitur temporal dan manipulasi time-series.
+- **Kolom kategorik tersimpan sebagai kode integer**: Kolom seperti season, mnth, weathersit, workingday, dan yr belum memiliki label deskriptif.
+- **Variabel numerik dalam format ternormalisasi**: Kolom cuaca (temp, atemp, hum, windspeed) masih berada dalam rentang 0-1, membutuhkan denormalisasi ke satuan riil agar memiliki nilai interpretasi bisnis.
 
-**Insight tambahan dari Assessing Data:**
-- Tidak ada missing value maupun baris duplikat pada `day_df` dan `hour_df` — data lengkap dari segsi kelengkapan baris.
-- Nilai `casual + registered == cnt` untuk **semua baris** — data konsisten secara logistik (total penyewaan selalu sama dengan jumlah casual ditambah registered).
-- Rentang nilai numerik (`temp`, `atemp`, `hum`, `windspeed`) sudah dalam skala normalized (0–1) sesuai dokumentasi dataset.
+**Catatan Integritas Data**: Tidak ditemukan missing values maupun baris duplikat. Konsistensi logis terpenuhi di mana casual + registered == cnt pada seluruh baris.
 
 #### Cleaning Data (Pembersihan Data)
 
-Berdasarkan hasil assessing, dilakukan pembersihan sebagai berikut:
-
-1. **Konversi tipe data `dteday` ke `datetime64`** pada kedua dataframe — siap untuk analisis time-series dan grouping berdasarkan waktu.
-2. **Pemetaan label kolom kategorik** — ditambahkan kolom baru: `season_label`, `yr_label`, `mnth_label`, `weather_label`, `workingday_label`, `weekday_label`, `holiday_label`.
-3. **Konversi skala ke satuan interpretatif** — `temp_celsius` (×41), `atemp_celsius` (×50), `hum_pct` (×100), `wind_ms` (×67) untuk memudahkan interpretasi oleh stakeholder bisnis.
-
-**Insight setelah Cleaning Data:**
-- Kedua dataset kini memiliki tipe data yang benar untuk semua kolom.
-- Kolom label kategorik telah ditambahkan untuk memudahkan analisis dan visualisasi.
-- Kolom suhu, kelembapan, dan kecepatan angin telah dikonversi ke satuan asli yang interpretatif.
-- Data bersih: 0 missing value, 0 duplikasi, siap untuk tahap EDA.
-
----
+- Konversi dteday ke tipe datetime64[ns].
+- Pemetaan kolom kategorik menjadi label teks representatif: season_label, yr_label, mnth_label, weather_label, dan workingday_label.
+- Denormalisasi variabel kontinu ke satuan metrik:
+  - temp_celsius = temp x 41
+  - atemp_celsius = atemp x 50
+  - hum_pct = hum x 100
+  - wind_ms = windspeed x 67 (km/jam atau m/s terkonversi)
 
 ### 3. Exploratory Data Analysis (EDA)
 
-#### EDA 1: Analisis Temporal — Pola Penyewaan per Bulan dan Musim (2011–2012)
+#### EDA 1: Analisis Temporal - Pola Bulanan dan Musiman
 
-- Pola penyewaan sepeda menunjukkan **fluktuasi musiman yang sangat konsisten** selama 2011–2012. Penyewaan mencapai puncak di musim **Fall (Gugur)** dan **Summer (Panas)**, sedang terendah di musim **Winter (Dingin)** dan **Spring (Semi)**.
-- Rata-rata penyewaan harian tertinggi terjadi di **bulan September (Fall)** dengan sekitar **5.644 sepeda/hari**, sedangkan terendah di **bulan Januari (Spring/Winter)** dengan sekitar **1.839 sepeda/hari** — selisih hingga **~3,1×** antara bulan terbaik dan terburuk.
-- Terdapat pertumbuhan total penyewaan sekitar **+67%** dari tahun 2011 ke 2012, mengindikasikan adopsi layanan bike sharing yang terus meningkat dan potensi bisnis yang menjanjikan.
+- **Pola Musiman**: Rata-rata sewa harian tertinggi diraih oleh musim Fall (Gugur) sebesar 5.644 unit/hari, diikuti Summer (4.992 unit/hari) dan Winter (4.728 unit/hari). Musim Spring (Semi) terendah dengan rata-rata 2.604 unit/hari (terpaut penurunan lebih dari 53% dibanding Fall).
+- **Pola Bulanan**: Titik terendah konsisten di bulan Januari (1.232 unit/hari pada 2011; 3.121 unit/hari pada 2012). Puncak sewa terjadi pada pertengahan hingga akhir tahun (Juni 2011: 4.784 unit/hari dan September 2012: 7.286 unit/hari).
+- **Pertumbuhan Bisnis**: Total penyewaan melonjak 64,9% dari 1.243.103 sewa (2011) menjadi 2.049.576 sewa (2012).
 
-#### EDA 2: Analisis Perilaku Pengguna — Pola Per Jam dan Tipe Hari
+#### EDA 2: Analisis Perilaku Pengguna - Jam Sibuk Hari Kerja vs Non-Kerja
 
-- **Hari kerja** menunjukkan **pola bimodal** (dua puncak): pagi sekitar **08:00** (commute ke kantor) dan sore **17:00–18:00** (pulang kerja) — pola yang sangat khas bagi pengguna commuter.
-- **Hari non-kerja** menunjukkan **pola unimodal** (satu puncak): siang hingga sore sekitar **12:00–15:00** — pola yang lebih berkaitan dengan aktivitas rekreasi dan liburan.
-- Pengguna **registered** mendominasi penyewaan pada hari kerja (sekitar **80%+**), sementara pengguna **casual** relatif lebih tinggi pada hari non-kerja — menunjukkan bahwa registered adalah inti pelanggan harian, sementara casual adalah pelanggan sesekali/rekreasi.
-- Rata-rata penyewaan per jam pada hari kerja cenderung lebih tinggi dari hari non-kerja pada jam puncak commuter, tetapi lebih rendah di luar jam puncak.
+- **Hari Kerja (Bimodal)**: Memiliki 2 puncak jam sibuk komuter tajam pada pukul 08:00 (477,0 unit/jam) dan pukul 17:00-18:00 (puncak tertinggi 525,3 unit/jam). Pengguna didominasi mutlak oleh segmen terdaftar (Registered: 86,7%).
+- **Hari Non-Kerja (Unimodal)**: Memiliki kurva tunggal landai khas rekreasi yang memuncak pada pukul 13:00 (372,7 unit/jam) dan stabil aktif antara pukul 11:00-16:00. Porsi pengguna kasual (Casual) meningkat lebih dari 2x lipat hingga mencapai 31,6%.
 
 #### EDA 3: Analisis Pengaruh Cuaca terhadap Penyewaan
 
-- Kondisi cuaca berpengaruh **sangat signifikan** terhadap jumlah penyewaan. Cuaca *Clear/Partly Cloudy* menghasilkan rata-rata penyewaan tertinggi (~**4.877 sepeda/hari**), sedangkan cuaca buruk (*Light Snow/Rain*) hanya ~**1.803 sepeda/hari** — penurunan hingga **~63%**.
-- **Suhu (temp)** berkorelasi **positif kuat** (r ≈ **+0.63**) dengan jumlah penyewaan — pola hubungan berbentuk kurva, penyewaan optimal pada suhu **20–30°C**.
-- **Kelembapan (hum)** berkorelasi **negatif** (r ≈ **-0.10**) dengan penyewaan — udara lembap cenderung mengurangi penyewaan, meski efeknya lebih lemah dibandingkan suhu.
-- **Kecepatan angin** juga berkorelasi negatif namun sangat lemah dengan penyewaan.
-
----
+- **Kondisi Cuaca**: Kondisi cerah (Clear/Partly Cloudy) membukukan rata-rata sewa 4.877 unit/hari, kabut/berawan (Mist/Cloudy) menghasilkan 4.036 unit/hari, dan cuaca hujan/salju (Light Snow/Rain) anjlok drastis ke 1.803 unit/hari (penurunan masif sekitar 63,0%).
+- **Korelasi Suhu & Angin**: Suhu (temp dan atemp) berkorelasi positif kuat (r = +0,63) dengan sweet spot di rentang 20-30 derajat C (puncak 5.726 unit/hari pada 25-30 derajat C). Kecepatan angin berkorelasi negatif moderat-rendah (r = -0,235), sedangkan kelembapan berkorelasi negatif lemah (r = -0,101).
 
 ### 4. Visualization & Explanatory Analysis
 
 #### Visualisasi 1: Pola Temporal (Pertanyaan Bisnis 1)
-- **Line chart**: Rata-rata penyewaan harian per bulan per tahun (2011 vs 2012) — menunjukkan pola kurva yang konsisten dengan puncak di September.
-- **Bar chart**: Rata-rata penyewaan per musim — Fall tertinggi, diikuti Summer, Winter, dan Spring.
 
-**Kesimpulan Visualisasi 1:**
-- Penyewaan sepeda mengikuti **pola musiman yang konsisten** — meningkat dari Januari, mencapai puncak sekitar **September (Fall)**, kemudian menurun menjelang akhir tahun.
-- Musim **Fall** memiliki rata-rata penyewaan harian tertinggi (~**5.644 sepeda/hari**), diikuti Summer, Winter, dan Spring sebagai terendah.
-- Tahun **2012** secara konsisten menunjukkan jumlah penyewaan lebih tinggi dibandingkan 2011 di **setiap bulan**, mengindikasikan pertumbuhan bisnis yang sehat dan stabil sebesar sekitar **+67%** secara keseluruhan.
+Line chart & Bar chart: Menunjukkan garis 2012 yang selalu berada di atas 2011 di seluruh bulan, membuktikan tren pertumbuhan tahunan yang solid (+64,9%), dengan musim Fall sebagai kontributor sewa tertinggi (5.644 unit/hari).
 
 #### Visualisasi 2: Pola Per Jam (Pertanyaan Bisnis 2)
-- **Line chart**: Rata-rata penyewaan per jam, membandingkan hari kerja vs hari non-kerja — menunjukkan pola bimodal vs unimodal.
 
-**Kesimpulan Visualisasi 2:**
-- Hari kerja memiliki pola **bimodal** (dua puncak): **08:00** (pagi, berangkat kerja) dan **17:00–18:00** (sore, pulang kerja) — sangat khas bagi pengguna commuter.
-- Hari non-kerja memiliki pola **unimodal**: penyewaan mulai naik pagi dan mencapai puncak sekitar **12:00–15:00** — pola yang berkaitan dengan aktivitas rekreasi.
-- Pengguna **registered** mendominasi sepanjang hari kerja, terutama pada jam puncak commuter, sementara pengguna **casual** lebih aktif pada siang hari dan akhir pekan.
+Hourly Plot & Stacked Area: Mempertegas profil komuter harian. Grafik area membuktikan secara visual bahwa lonjakan jam 08:00 dan 17:00-18:00 hampir seluruhnya digerakkan oleh pengguna Registered, sedangkan pengguna Casual lebih dominan di siang akhir pekan.
 
 #### Visualisasi 3: Pengaruh Cuaca (Pertanyaan Bisnis 3)
-- **Bar horizontal**: Rata-rata penyewaan per kondisi cuaca — Clear/Partly Cloudy tertinggi, Light Snow/Rain terendah.
-- **Scatter plot**: Suhu vs jumlah penyewaan — menunjukkan korelasi positif dengan pola kurva.
 
-**Kesimpulan Visualisasi 3:**
-- Kondisi cuaca **Clear/Partly Cloudy** menghasilkan rata-rata penyewaan paling tinggi (~**4.877 sepeda/hari**), sedangkan **Light Snow/Rain** paling rendah (~**1.803 sepeda/hari**) — penurunan hingga **~63%**.
-- **Suhu** berkorelasi **positif kuat** (r ≈ **+0.63**) dengan penyewaan: pola hubungan berbentuk kurva, penyewaan optimal pada suhu **20–30°C**.
-- **Kelembapan** berkorelasi **negatif** (r ≈ **-0.10**) dengan penyewaan: kelembapan tinggi cenderung mengurangi penyewaan, meski efeknya lebih lemah dibandingkan suhu.
-
----
+Bar Plot & Non-Linear Scatter Plot: Menunjukkan penurunan drastis 63% pada cuaca buruk (Snow/Rain) serta kurva polinomial suhu yang melandai/berbalik sedikit turun saat suhu melampaui 30 derajat C.
 
 ### 5. Analisis Lanjutan: Clustering Manual (Binning)
 
-Teknik **clustering manual menggunakan binning** diterapkan untuk mengelompokkan hari menjadi 4 tier permintaan berdasarkan jumlah penyewaan harian (`cnt`):
+Penerapan manual binning pada 731 hari ke dalam 4 tingkatan permintaan (Demand Tier):
 
-| Segmen | Rentang Penyewaan | Proporsi | Karakteristik |
-|--------|-------------------|----------|---------------|
-| **Low Demand** | < 2.000 | ~13% hari | Musim dingin, cuaca buruk (hujan/salju) |
-| **Medium Demand** | 2.000–3.500 | Segmen menengah | Kondisi cuaca sedang, musim pergantian |
-| **High Demand** | 3.500–5.500 | Segmen tinggi | Suhu hangat, cuaca cerah |
-| **Very High Demand** | > 5.500 | ~30% hari | Musim Summer & Fall, suhu >20°C, cuaca cerah |
+| Segmen Permintaan | Rentang Sewa (cnt) | Jumlah Hari | Porsi Hari (%) | Rata-rata Sewa | Rata-rata Suhu | Peluang Cuaca Baik |
+|-------------------|-------------------|-------------|----------------|----------------|----------------|-------------------|
+| Low Demand | < 2.000 | 98 hari | 13,4% | 1.395 unit/hari | 11,1°C | 45,0% |
+| Medium Demand | 2.000-3.500 | 121 hari | 16,6% | 2.785 unit/hari | 14,9°C | 54,0% |
+| High Demand | 3.500-5.500 | 289 hari | 39,5% | 4.505 unit/hari | 22,3°C | 64,0% |
+| Very High Demand | > 5.500 | 223 hari | 30,5% | 6.803 unit/hari | 24,8°C | 76,0% |
 
-**Insight Clustering:**
-- Segmen **Very High Demand** (~30% hari) didominasi oleh hari di musim **Summer** dan **Fall** dengan suhu hangat (>20°C) dan cuaca cerah — merupakan hari dengan permintaan tertinggi yang perlu prioritas armada.
-- Segmen **Low Demand** (~13% hari) dominan terjadi di musim **Winter** dan **Spring** atau saat cuaca buruk (hujan/salju) — hari dengan permintaan rendah yang cocok untuk maintenance armada.
-- **Spring** memiliki proporsi Low Demand tertinggi (~30%), sementara **Fall** memiliki proporsi Very High Demand tertinggi (~55%).
+**Insight Distribusi Silang Musim (Cross-Tabulation Heatmap)**:
 
----
+- Musim Fall memiliki performa terbaik di mana 96,3% hari berada di tier permintaan tinggi (48,4% Very High dan 47,9% High).
+- Musim Spring adalah musim terlemah di mana 75,6% hari berada di tier rendah (43,6% Low dan 32,0% Medium).
+- Secara keseluruhan, sebanyak 70,0% hari operasional (High + Very High) berada pada level permintaan tinggi.
 
 ### 6. Conclusion & Recommendation
 
 #### Kesimpulan
 
-**Kesimpulan Pertanyaan 1 (Temporal Analysis):**
-Penyewaan sepeda memiliki **pola musiman yang konsisten dan kuat** selama 2011–2012. Penyewaan tertinggi terjadi pada **musim Fall (Gugur)**, khususnya bulan **September–Oktober**, dengan rata-rata harian ~**5.644 sepeda**. Penyewaan terendah terjadi pada **musim Spring (Semi)** di bulan **Januari**, dengan rata-rata ~**1.839 sepeda/hari**. Terdapat pertumbuhan total penyewaan sekitar **+67%** dari 2011 ke 2012, mengindikasikan adopsi layanan bike sharing yang terus meningkat dan potensi ekspansi bisnis.
+1. **Pola Temporal**: Penyewaan sepeda berfluktuasi secara teratur mengikuti musim (puncak di Fall: 5.644 sepeda/hari; terendah di Spring: 2.604 sepeda/hari) dan didukung pertumbuhan tahunan konsisten sebesar +64,9% dari 2011 ke 2012.
 
-**Kesimpulan Pertanyaan 2 (User Behavior Analysis):**
-Pola penggunaan per jam sangat berbeda antara hari kerja dan hari non-kerja. Pada hari kerja, penyewaan membentuk **pola bimodal** dengan puncak pada **08:00** (commute pagi) dan **17:00–18:00** (commute sore), didominasi oleh pengguna **registered** (~80%+). Pada hari non-kerja, penyewaan membentuk **pola unimodal** dengan puncak di **12:00–13:00**, lebih banyak digunakan untuk rekreasi dengan proporsi pengguna **casual** yang lebih tinggi. Perbedaan ini mencerminkan dua segmen pengguna dengan kebutuhan operasional yang berbeda.
+2. **Perilaku Pengguna**: Pola sewa hari kerja bersifat bimodal komuter (puncak 08:00 dan 17:00-18:00) yang digerakkan oleh 86,7% pengguna Registered. Hari libur bersifat unimodal santai (puncak 13:00) dengan kontribusi pengguna Casual naik menjadi 31,6%.
 
-**Kesimpulan Pertanyaan 3 (Weather Impact Analysis):**
-Faktor cuaca berpengaruh signifikan terhadap jumlah penyewaan. Kondisi **Clear/Partly Cloudy** menghasilkan rata-rata penyewaan ~**4.877 sepeda/hari**, sedangkan **Light Snow/Rain** hanya ~**1.803 sepeda/hari** (penurunan ~**63%**). **Suhu** berkorelasi positif kuat (r ≈ +**0.63**) dengan penyewaan, optimal di kisaran **20–30°C**. **Kelembapan** berkorelasi negatif (r ≈ -**0.10**), namun efeknya lebih lemah dibandingkan suhu. Cuaca adalah faktor eksternal kunci yang harus dipertimbangkan dalam perencanaan operasional.
+3. **Pengaruh Cuaca**: Kondisi cuaca hujan/salju memangkas penyewaan hingga 63,0%. Suhu berkorelasi positif kuat (r = +0,63) dengan tingkat kenyamanan optimal di rentang 20-30 derajat C, sementara angin kencang menurunkan minat bersepeda (r = -0,235).
 
-**Kesimpulan Analisis Lanjutan (Clustering):**
-Segmentasi hari ke dalam 4 tier permintaan (Low, Medium, High, Very High Demand) mengungkapkan bahwa hari dengan **Very High Demand** (~30% hari) selalu bertepatan dengan kombinasi suhu hangat (>20°C), cuaca cerah, dan musim Summer/Fall. Hari **Low Demand** (~13% hari) dominan terjadi di musim dingin dan saat cuaca buruk. Segmentasi ini memberikan kerangka kerja untuk pengambilan keputusan operasional berbasis data.
+4. **Segmentasi Hari**: Sebanyak 70,0% hari operasional berada di level High hingga Very High Demand, yang didominasi oleh musim panas/gugur, suhu hangat (lebih dari 22 derajat C), dan hari kerja komuter.
 
 #### Rekomendasi Action Item
 
-**1. Optimasi Armada Berbasis Musim (Seasonal Fleet Management)**
-- **Tingkatkan** ketersediaan armada sepeda sebesar **30–40%** selama **musim Fall (Agustus–Oktober)** saat permintaan paling tinggi.
-- **Kurangi** operasional dan jadwalkan maintenance besar pada musim **Winter–Spring (Desember–Maret)** saat permintaan rendah, untuk efisiensi biaya operasional.
+1. **Manajemen Armada Berbasis Musim**: Maksimalkan ketersediaan 100% armada pada musim Summer-Fall (Mei-Oktober), dan gunakan periode low-demand pada musim dingin (Desember-Februari) untuk perawatan besar unit (overhaul).
 
-**2. Redistribusi Sepeda Berbasis Pola Per Jam (Dynamic Rebalancing)**
-- Implementasikan sistem **rebalancing otomatis** sebelum jam puncak hari kerja: pastikan stasiun terisi penuh sebelum pukul **07:30** dan **16:30** untuk menanggulangi lonjakan commuter.
-- Untuk hari non-kerja, prioritas pengisian stasiun di area **rekreasi/wisata** antara pukul **10:00–14:00** saat puncak penyewaan casual terjadi.
+2. **Redistribusi Dinamis Berbasis Jam**:
+   - Hari Kerja: Pastikan ketersediaan stok di area permukiman sebelum 07:00 pagi dan kosongkan dermaga di area perkantoran sebelum 16:00 sore.
+   - Hari Libur: Pusatkan armada di dekat taman kota dan lokasi rekreasi mulai pukul 10:00-15:00.
 
-**3. Program Promosi Berbasis Cuaca (Weather-Triggered Promotions)**
-- Buat sistem notifikasi otomatis ke pengguna **casual** saat prakiraan cuaca **cerah dan suhu 20–28°C**, menawarkan diskon atau reward untuk mendorong penggunaan.
-- Siapkan **opsi asuransi perjalanan atau pengembalian gratis** saat cuaca buruk (hujan/salju) terjadi mendadak, untuk meningkatkan kepercayaan dan retensi pengguna.
+3. **Pemasaran Berbasis Cuaca (Weather-Triggered)**: Kirimkan penawaran rute rekreasi otomatis saat suhu 20-30 derajat C dan cuaca cerah. Tawarkan perlindungan pembatalan gratis saat hujan mendadak untuk menjaga retensi pengguna kasual.
 
-**4. Program Konversi Casual ke Registered**
-- Fokuskan kampanye konversi pada **hari non-kerja** saat proporsi pengguna casual meningkat.
-- Tawarkan **trial membership 30 hari** dengan harga spesial khususnya di musim **Summer dan Fall**, karena pengguna casual lebih aktif di bulan-bulan tersebut.
+4. **Konversi Kasual ke Pelanggan Terdaftar**: Tawarkan promosi weekend pass dan diskon langganan bulanan di akhir pekan pada stasiun rekreasi saat keterlibatan pengguna Casual sedang berada di puncak (31,6%).
 
-**5. Sistem Prediksi Permintaan Berbasis Cuaca dan Musim**
-- Integrasikan data prakiraan cuaca API ke sistem manajemen operasional untuk mengantisipasi hari-hari **Very High Demand** vs **Low Demand** secara real-time.
-- Gunakan segmentasi tier (Low/Medium/High/Very High) sebagai dasar **SOP (Standard Operating Procedure)** distribusi armada harian dan pengaturan stasiun.
-
----
+5. **Implementasi SOP Berbasis Prediksi Permintaan**: Gunakan hasil integrasi API cuaca untuk membagi kesiapan tim operasional: status Siaga Penuh pada hari berprediksi Very High Demand (lebih dari 5.500 sewa), dan status Efisiensi Biaya/Servis Unit pada hari berprediksi Low Demand (kurang dari 2.000 sewa).
 
 ## Author
-**Rio Andika Andriansyah** 
-Email: andikario0101@gmail.com 
-ID Dicoding: rioandikaa01
+
+**Rio Andika Andriansyah**
+- Email: andikario0101@gmail.com
+- ID Dicoding: rioandikaa01
