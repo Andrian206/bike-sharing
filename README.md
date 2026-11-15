@@ -48,6 +48,31 @@ pip install -r requirements.txt
 streamlit run dashboard.py
 ```
 
+## 🚀 Deploy ke Streamlit Community Cloud
+
+Ikuti langkah berikut untuk mendeploy dashboard ke Streamlit Community Cloud:
+
+1. **Push kode ke GitHub**  
+   Pastikan seluruh file proyek (termasuk `dashboard/dashboard.py`, `dashboard/day_data.csv`, `dashboard/hour_data.csv`, `requirements.txt`, dan `url.txt`) telah di-push ke repository GitHub.
+
+2. **Buka Streamlit Community Cloud**  
+   Kunjungi [https://share.streamlit.io](https://share.streamlit.io) dan login menggunakan akun GitHub Anda.
+
+3. **Buat Aplikasi Baru**  
+   Klik tombol **"New app"**, lalu pilih:
+   - **Repository**: repository proyek Anda
+   - **Branch**: `main` (atau branch yang sesuai)
+   - **Main file path**: `dashboard/dashboard.py`
+
+4. **Deploy**  
+   Klik tombol **"Deploy"** dan tunggu hingga proses selesai. Streamlit akan secara otomatis menginstall dependensi dari `requirements.txt`.
+
+5. **Akses Dashboard**  
+   Setelah deployment selesai, dashboard dapat diakses melalui URL yang diberikan Streamlit Cloud, misalnya:  
+   `https://bike-sharing-rioandikaa01.streamlit.app/`
+
+> **Catatan:** Pastikan file `day_data.csv` dan `hour_data.csv` berada di dalam folder `dashboard/` agar dapat dibaca oleh `dashboard.py` saat berjalan di Streamlit Cloud.
+
 ## Cara Menjalankan
 
 ### 1. Install Dependensi
