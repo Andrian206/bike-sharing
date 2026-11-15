@@ -10,19 +10,22 @@ Dataset yang digunakan: **Bike Sharing Dataset** (Hadi Fanaee-T, University of P
 ```
 submission/
 ├───dashboard/
-│   ├───main_data.csv      # Data siap pakai untuk dashboard (731 baris, 26 kolom)
-│   └───dashboard.py       # Aplikasi dashboard Streamlit
-├───data/
-│   ├───data_1.csv         # (disamarkan di folder datasets/)
-│   └───data_2.csv         # (disamarkan di folder datasets/)
+│   ├───dashboard.py       # Aplikasi dashboard Streamlit (berada di root)
+│   ├───day_data.csv       # Data bersih harian (731 baris, 27 kolom)
+│   └───hour_data.csv      # Data bersih per jam (17.379 baris, 28 kolom)
 ├───datasets/
-│   ├───day.csv            # Data agregat harian (731 baris)
-│   ├───hour.csv           # Data per jam (17.379 baris)
-│   └───Readme.txt         # Dokumentasi dataset
+│   ├───day.csv            # Data agregat harian asli (731 baris)
+│   ├───hour.csv           # Data per jam asli (17.379 baris)
+│   └───Readme.txt         # Dokumentasi dataset asli
 ├───notebook.ipynb         # Notebook analisis data lengkap
 ├───README.md              # Berkas ini
 ├───requirements.txt       # Daftar dependensi Python
-└───url.txt                # Tautan dashboard Streamlit Cloud
+├───url.txt                # Tautan dashboard Streamlit Cloud
+├───plot_clustering.png    # Visualisasi hasil clustering
+├───plot_heatmap_season_tier.png   # Visualisasi heatmap season & tier
+├───plot_temporal_analysis.png     # Visualisasi analisis temporal
+├───plot_user_behavior.png         # Visualisasi perilaku pengguna
+└───plot_weather_impact.png        # Visualisasi pengaruh cuaca
 ```
 
 ## Setup Environment
@@ -48,28 +51,28 @@ pip install -r requirements.txt
 streamlit run dashboard.py
 ```
 
-## 🚀 Deploy ke Streamlit Community Cloud
+## Deploy ke Streamlit Community Cloud
 
 Ikuti langkah berikut untuk mendeploy dashboard ke Streamlit Community Cloud:
 
-1. **Push kode ke GitHub**  
-   Pastikan seluruh file proyek (termasuk `dashboard/dashboard.py`, `dashboard/day_data.csv`, `dashboard/hour_data.csv`, `requirements.txt`, dan `url.txt`) telah di-push ke repository GitHub.
+1. **Push kode ke GitHub** 
+ Pastikan seluruh file proyek (termasuk `dashboard/dashboard.py`, `dashboard/day_data.csv`, `dashboard/hour_data.csv`, `requirements.txt`, dan `url.txt`) telah di-push ke repository GitHub.
 
-2. **Buka Streamlit Community Cloud**  
-   Kunjungi [https://share.streamlit.io](https://share.streamlit.io) dan login menggunakan akun GitHub Anda.
+2. **Buka Streamlit Community Cloud** 
+ Kunjungi [https://share.streamlit.io](https://share.streamlit.io) dan login menggunakan akun GitHub Anda.
 
-3. **Buat Aplikasi Baru**  
-   Klik tombol **"New app"**, lalu pilih:
-   - **Repository**: repository proyek Anda
-   - **Branch**: `main` (atau branch yang sesuai)
-   - **Main file path**: `dashboard/dashboard.py`
+3. **Buat Aplikasi Baru** 
+ Klik tombol **"New app"**, lalu pilih:
+ - **Repository**: repository proyek Anda
+ - **Branch**: `main` (atau branch yang sesuai)
+ - **Main file path**: `dashboard/dashboard.py`
 
-4. **Deploy**  
-   Klik tombol **"Deploy"** dan tunggu hingga proses selesai. Streamlit akan secara otomatis menginstall dependensi dari `requirements.txt`.
+4. **Deploy** 
+ Klik tombol **"Deploy"** dan tunggu hingga proses selesai. Streamlit akan secara otomatis menginstall dependensi dari `requirements.txt`.
 
-5. **Akses Dashboard**  
-   Setelah deployment selesai, dashboard dapat diakses melalui URL yang diberikan Streamlit Cloud, misalnya:  
-   `https://bike-sharing-rioandikaa01.streamlit.app/`
+5. **Akses Dashboard** 
+ Setelah deployment selesai, dashboard dapat diakses melalui URL yang diberikan Streamlit Cloud, misalnya: 
+ `https://bike-sharing-rioandikaa01.streamlit.app/`
 
 > **Catatan:** Pastikan file `day_data.csv` dan `hour_data.csv` berada di dalam folder `dashboard/` agar dapat dibaca oleh `dashboard.py` saat berjalan di Streamlit Cloud.
 
@@ -100,7 +103,7 @@ Berkas README.md ini berisi panduan cara menjalankan dashboard dan analisis data
 
 ---
 
-## 📊 Hasil Analisis Detail
+## Hasil Analisis Detail
 
 ### 1. Gathering Data
 
@@ -260,6 +263,6 @@ Segmentasi hari ke dalam 4 tier permintaan (Low, Medium, High, Very High Demand)
 ---
 
 ## Author
-**Rio Andika Andriansyah**  
-Email: andikario0101@gmail.com  
+**Rio Andika Andriansyah** 
+Email: andikario0101@gmail.com 
 ID Dicoding: rioandikaa01
